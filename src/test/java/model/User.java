@@ -1,109 +1,104 @@
 package model;
 
 import com.fasterxml.jackson.annotation.JsonProperty;
+import groovy.lang.Range;
 
+import java.util.Collections;
 import java.util.List;
+import java.util.Random;
 
 public class User {
-    @JsonProperty("id")
-    private List<Integer> id;
-    @JsonProperty("username")
-    private List<String> username;
-    @JsonProperty("firstName")
-    private List<String> firstName;
-    @JsonProperty("lastName")
-    private List<String> lastName;
-    @JsonProperty("email")
+
+    private Integer id;
+    private String username;
+    private String firstName;
+    private String lastName;
     private String email;
-    @JsonProperty("password")
     private String password;
-    @JsonProperty("phone")
-    private String phone;
-    @JsonProperty("userStatus")
+    private Integer phone;
     private Integer userStatus;
+
+    public static User getDefaultUser(){
+        User user = new User();
+        user.setId(new Random().nextInt());
+        user.setUsername("awr");
+        user.setFirstName("ser");
+        user.setLastName("sfsda");
+        user.setEmail("asd@somemailservice.com");
+        user.setPassword("5f685g68");
+        user.setPhone(new Random().nextInt());
+        user.setUserStatus(0);
+        return user;
+    }
 
     public User() {
     }
 
-    @JsonProperty("id")
-    public List<Integer> getId() {
+    public Integer getId() {
         return id;
     }
 
-    @JsonProperty("id")
-    public void setId(List<Integer> id) {
+    public void setId(Integer id) {
         this.id = id;
     }
 
-    @JsonProperty("username")
-    public List<String> getUsername() {
+    public String getUsername() {
         return username;
     }
 
-    @JsonProperty("username")
-    public void setUsername(List<String> username) {
+    public void setUsername(String username) {
         this.username = username;
     }
 
-    @JsonProperty("firstName")
-    public List<String> getFirstName() {
+    public String getFirstName() {
         return firstName;
     }
 
-    @JsonProperty("firstName")
-    public void setFirstName(List<String> firstName) {
+    public void setFirstName(String firstName) {
         this.firstName = firstName;
     }
 
-    @JsonProperty("lastName")
-    public List<String> getLastName() {
+    public String getLastName() {
         return lastName;
     }
 
-    @JsonProperty("lastName")
-    public void setLastName(List<String> lastName) {
+    public void setLastName(String lastName) {
         this.lastName = lastName;
     }
 
-    @JsonProperty("email")
     public String getEmail() {
         return email;
     }
 
-    @JsonProperty("email")
     public void setEmail(String email) {
         this.email = email;
     }
 
-    @JsonProperty("password")
     public String getPassword() {
         return password;
     }
 
-    @JsonProperty("password")
     public void setPassword(String password) {
         this.password = password;
     }
 
-    @JsonProperty("phone")
-    public String getPhone() {
+    public Integer getPhone() {
         return phone;
     }
 
-    @JsonProperty("phone")
-    public void setPhone(String phone) {
+    public void setPhone(Integer phone) {
         this.phone = phone;
     }
 
-    @JsonProperty("userStatus")
     public Integer getUserStatus() {
         return userStatus;
     }
 
-    @JsonProperty("userStatus")
     public void setUserStatus(Integer userStatus) {
         this.userStatus = userStatus;
     }
+
+
 }
 
 
